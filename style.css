@@ -1,0 +1,275 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(/imagens/fundo_espaço.avif);
+}
+
+ 
+/* Estlização do Sol */
+
+.sun{
+    
+    position: relative;
+    background-color: #ffd700;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px 10px rgba(255, 255, 0.5);
+     animation: pulse 5s infinite alternate,
+               rotate 20s linear infinite;                             
+}
+
+.sun::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 60%);
+    border-radius: 50%;
+}
+
+
+@keyframes pulse {
+    
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes rotate-sun {
+    from {
+        transform: rotate(0deg) 
+    }
+    to {
+        transform: rotate(360deg) 
+    }
+}
+
+/* Estilização da Orbita de Mercuuri e do Planeta Mercurio*/
+
+
+.orbit{
+    position: absolute;
+    top: 10%;
+    left: 130%;
+    transform: translate(-50%, -50%);
+    border: 1px dashed rgba(255, 255, 255, 0.5); /* Cor e estilo da borda */
+    border-radius: 50%; /* Para criar uma forma circular */
+
+}
+
+.orbit-mercurio{
+    position: absolute;
+    top: -30%;
+    left: 70%;
+    width: 30px;
+    height: 30px;
+    animation: rotate 5s infinite linear;
+}
+
+.mercurio{
+
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    right: 0;
+    background-color: rgb(220, 146, 54);
+    border-radius: 50%;
+
+}
+
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Estilização da Orbita de Vênus do Planeta */
+
+
+.orbit-venus{
+    position: absolute;
+    top: 90%;
+    left: 130%;
+    width: 40px;
+    height: 40px;
+    animation: rotate 5s linear infinite;
+    animation-delay: 1s;
+}
+
+.venus{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(199, 120, 70);
+    border-radius: 50%;
+    top: -10px;
+    box-shadow: inset 0 0 20px #bdbaba, 0 0 50px #b57f41;
+}
+
+/* Estilização da Orbita da Terra e o planeta */
+
+
+.orbit-terra{
+    position: absolute;
+    top: 140%;
+    left: 80%;
+    width: 60px;
+    height: 60px;
+    animation: rotate 7s linear infinite;
+    animation-delay: 2s;
+}
+
+.terra{
+  position: absolute;
+  top: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 25% 20%, #4d7cff, #002aff);
+  box-shadow: inset 0 0 20px #000, 0 0 50px #ffffff;
+}
+
+  
+   
+/* Estilização da Orbita da Marte e o planeta */
+
+.orbit-marte{
+    position: absolute;
+    top: 160%;
+    left: 150%;
+    width: 70px;
+    height: 70px;
+    animation: rotate 8s linear infinite;
+}
+
+.marte{
+    background: radial-gradient(#FF6347 50%, #8B4513 70%);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: inset 0 0 20px #3c3836, 0 0 50px #8B4513;
+    position: absolute;
+    left: 30px;
+}
+
+.marte::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(202, 202, 202, 0.2), transparent); /* Gradiente radial transparente */
+    border-radius: 50%;
+}
+
+/* Estilização de Jupiter */
+
+.orbit-jupiter{
+    position: absolute;
+    top: 50%;
+    left: -105%;
+    width: 85px;
+    height: 85px;
+    animation: rotate 10s linear infinite;
+}
+
+.jupiter{
+    position: absolute;
+    top: 30px;
+    width: 70px;
+    height: 70px;
+    background-color: #8B4513;
+    border-radius: 50%;
+    box-shadow: inset 0 0 20px #3c3836, 0 0 50px #dec32ad4
+}
+
+
+/* Estilização de Saturno */
+
+.orbit-saturno{
+    position: absolute;
+    top: -130%;
+    left: -100px;
+    width: 70px;
+    height: 70px;
+    animation: rotate 8s linear infinite;
+}
+
+.saturno{
+    position: absolute;
+    top: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #9dcb32;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px #57c617, 0 0 50px #449210d4
+}   
+
+
+/* Estilização de Urano */
+
+.orbit-urano{
+    position: absolute;
+    top: 220%;
+    left: -150%;
+    width: 70px;
+    height: 70px;
+    animation: rotate 8s linear infinite;
+}
+
+.urano{
+    position: absolute;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #3c3836;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px #91c175, 0 0 50px #0a1006d4
+}
+
+/* Estilizxação Netuno */
+
+.orbit-netuno{
+    position: absolute;
+    top:  -100%;
+    left: 210%;
+    width: 70px;
+    height: 70px;
+    animation: rotate 8s linear infinite;
+}
+
+
+.netuno{
+    position: absolute;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #7c1a9af0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px #1d59d2, 0 0 50px #5130c6d4
+}
